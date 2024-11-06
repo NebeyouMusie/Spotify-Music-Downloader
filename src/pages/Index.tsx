@@ -37,7 +37,7 @@ const Index = () => {
           </p>
         </div>
 
-        <SpotifyInput onSubmit={setUrl} />
+        <SpotifyInput onSubmit={setUrl} isLoading={isLoading} />
 
         {isLoading && <LoadingState />}
         {track && <SongCard track={track} />}
