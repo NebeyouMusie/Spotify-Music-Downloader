@@ -5,6 +5,7 @@ import { fetchSpotifyTrack } from '@/lib/spotify';
 import LoadingState from '@/components/LoadingState';
 import SongCard from '@/components/SongCard';
 import { useState } from 'react';
+import { ModeToggle } from '@/components/mode-toggle';
 
 const Index = () => {
   const [songUrl, setSongUrl] = useState<string | null>(null);
@@ -17,6 +18,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen p-4 sm:p-8">
+      <div className="absolute top-4 right-4">
+        <ModeToggle />
+      </div>
       <div className="max-w-4xl mx-auto space-y-8 pt-8">
         <div className="text-center space-y-4">
           <div className="flex justify-center">
