@@ -6,11 +6,12 @@ import LoadingState from '@/components/LoadingState';
 import SongCard from '@/components/SongCard';
 import { useState } from 'react';
 import { ModeToggle } from '@/components/mode-toggle';
+import { Alert, AlertDescription } from "@/components/ui/alert";
 
 const Index = () => {
   const [url, setUrl] = useState('');
 
-  const { data: track, isLoading } = useQuery({
+  const { data: track, isLoading, isFetched } = useQuery({
     queryKey: ['track', url],
     queryFn: () => fetchSpotifyTrack(url),
     enabled: !!url,
@@ -40,6 +41,13 @@ const Index = () => {
         <SpotifyInput onSubmit={setUrl} isLoading={isLoading} />
 
         {isLoading && <LoadingState />}
+        {isFetched && !isLoading && !track && (
+          <Alert>
+            <AlertDescription>
+              No track found. Please check the URL and try again.
+            </AlertDescription>
+          </Alert>
+        )}
         {track && <SongCard track={track} />}
       </div>
     </div>
