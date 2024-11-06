@@ -26,9 +26,9 @@ const Index = () => {
         <div className="text-center space-y-4">
           <div className="flex justify-center">
             <img
-              src="https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png"
+              src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_Green.png"
               alt="Spotify Logo"
-              className="w-16 h-16"
+              className="w-32 h-32 object-contain"
             />
           </div>
           <h1 className="text-4xl font-bold">Spotify Music Downloader</h1>
