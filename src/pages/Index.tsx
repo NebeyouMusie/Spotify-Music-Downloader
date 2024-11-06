@@ -28,10 +28,10 @@ const Index = () => {
             <img
               src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_Green.png"
               alt="Spotify Logo"
-              className="w-32 h-32 object-contain"
+              className="w-64 h-64 object-contain"
             />
           </div>
-          <h1 className="text-4xl font-bold">Spotify Music Downloader</h1>
+          <h1 className="text-4xl font-bold">Music Downloader</h1>
           <p className="text-muted-foreground">
             Enter a Spotify track URL to download your favorite music
           </p>
