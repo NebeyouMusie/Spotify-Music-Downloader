@@ -17,18 +17,18 @@ const Index = () => {
   });
 
   return (
-    <div className="min-h-screen p-4 sm:p-8">
+    <div className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-8">
       <div className="absolute top-4 right-4">
         <ModeToggle />
       </div>
       
-      <div className="max-w-4xl mx-auto space-y-8 pt-8">
+      <div className="max-w-4xl w-full space-y-6">
         <div className="text-center space-y-4">
-          <div className="flex justify-center">
+          <div className="h-32 flex items-center justify-center">
             <img
               src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_Green.png"
               alt="Spotify Logo"
-              className="w-64 h-64 object-contain"
+              className="h-full object-contain"
             />
           </div>
           <h1 className="text-4xl font-bold">Music Downloader</h1>
