@@ -8,41 +8,38 @@ import { useState } from 'react';
 import { ModeToggle } from '@/components/mode-toggle';
 
 const Index = () => {
-  const [songUrl, setSongUrl] = useState<string | null>(null);
+  const [url, setUrl] = useState('');
 
   const { data: track, isLoading } = useQuery({
-    queryKey: ['track', songUrl],
-    queryFn: () => songUrl ? fetchSpotifyTrack(songUrl) : null,
-    enabled: !!songUrl,
+    queryKey: ['track', url],
+    queryFn: () => fetchSpotifyTrack(url),
+    enabled: !!url,
   });
 
   return (
-    <div className="min-h-screen p-4 sm:p-8">
+    <div className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-8">
       <div className="absolute top-4 right-4">
         <ModeToggle />
       </div>
-      <div className="max-w-4xl mx-auto space-y-8 pt-8">
+      
+      <div className="max-w-4xl w-full space-y-6">
         <div className="text-center space-y-4">
-          <div className="flex justify-center">
+          <div className="h-32 flex items-center justify-center">
             <img
               src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_Green.png"
               alt="Spotify Logo"
-              className="h-12 sm:h-16"
+              className="h-full object-contain"
             />
           </div>
-          <h1 className="text-2xl sm:text-4xl font-bold">Music Downloader</h1>
+          <h1 className="text-4xl font-bold">Music Downloader</h1>
           <p className="text-muted-foreground">
-            Enter a Spotify song URL to download your favorite tracks
+            Enter a Spotify track URL to download your favorite music
           </p>
         </div>
 
-        <SpotifyInput
-          onSubmit={setSongUrl}
-          isLoading={isLoading}
-        />
+        <SpotifyInput onSubmit={setUrl} isLoading={isLoading} />
 
         {isLoading && <LoadingState />}
-        
         {track && <SongCard track={track} />}
       </div>
     </div>
