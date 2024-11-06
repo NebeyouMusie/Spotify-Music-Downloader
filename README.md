@@ -1,4 +1,4 @@
-# Welcome to your GPT Engineer project
+# Spotify Music Downloader
 
 ## Project info
 
